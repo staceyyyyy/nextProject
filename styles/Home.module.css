@@ -40,6 +40,12 @@
 .ref:hover {
   color: #ff6021;
 }
+.detail {
+  width:100%;
+}
+.detail:hover {
+  transform: none;
+}
 /*
 .title {
   margin: 0;

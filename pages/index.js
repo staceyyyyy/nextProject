@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import Image from 'next/image'
 
 function Home({ posts }) {
-  console.log("post",posts)
+  // console.log("post",posts)
   return (
     <div>
       <Head>
@@ -34,7 +33,7 @@ function Home({ posts }) {
 export async function getServerSideProps() {
   const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
   const data = await res.json()
-  console.log("data",data)
+  // console.log("data",data)
   return {
     props: { posts: data.categories }, // will be passed to the page component as props
   }

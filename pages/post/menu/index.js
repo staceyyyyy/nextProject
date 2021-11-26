@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DefaultPost() {
+function DefaultMenu() {
     return (
         <div>
             Halaman default post
@@ -8,4 +8,4 @@ function DefaultPost() {
     )
 }
 
-export default DefaultPost
+export default DefaultMenu
