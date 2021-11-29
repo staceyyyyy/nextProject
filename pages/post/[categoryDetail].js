@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function CategoryDetail({ detail }) {
     const router = useRouter()
@@ -15,7 +16,11 @@ function CategoryDetail({ detail }) {
               <Link href={`/post/menu/${menu.idMeal}`} key={menu.idMeal}>
                 <div className={styles.grid} className={styles.card} key={menu.idMeal}>
                   <h2>{menu.strMeal}</h2>
-                  <img src={menu.strMealThumb} className={styles.img} />
+                  <Image 
+                  src={menu.strMealThumb}
+                  width={300}
+                  height={300}
+                />
                 </div>
               </Link>
             ))}

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function Home({ posts }) {
   // console.log("post",posts)
@@ -18,10 +19,14 @@ function Home({ posts }) {
         </p>
         <div className={styles.container}> 
           {posts.map((post)=> (
-            <Link href={`/post/${post.strCategory}`}  key={post.idCategory}>
+            <Link href={`/post/${post.strCategory}`} key={post.idCategory}>
             <div className={styles.grid} className={styles.card}>
               <h2>{post.strCategory}</h2>
-              <img src={post.strCategoryThumb}/>
+              <Image 
+                src={post.strCategoryThumb}
+                width={300}
+                height={300}
+              />
             </div>
               </Link>
           ))}

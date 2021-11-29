@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import styles from '../../../styles/Home.module.css'
-
+import Image from 'next/image'
 function idMenu({ menu }) {
     const router = useRouter()
     // console.log("rouM",router.query)
@@ -11,9 +11,14 @@ function idMenu({ menu }) {
             {menu.map((name)=> (
               <div className={styles.grid} className={`${styles.card} ${styles.detail}`} key={name.idMeal}>
                 <h2>{name.strMeal}</h2>
-                <img src={name.strMealThumb} className={styles.img} />
+                <Image 
+                  src={name.strMealThumb}
+                  width={300}
+                  height={300}
+                />
                 <h5>Category: {name.strCategory}</h5>
-                <p>How to: {name.strInstructions}</p>
+                <h3>How to:</h3>
+                <p>{name.strInstructions}</p>
                 <iframe 
                   src={`https://www.youtube.com/embed/${name.strYoutube.split("=")[1]}`}
                   frameBorder="0"
